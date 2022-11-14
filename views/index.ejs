@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CRUD APP</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <h1 data-position="header">CRUD APPLICATION</h1>
+
+    <section data-position="add-quote">
+      <h2>Add quote</h2>
+      <br>
+      <form action="/quotes" method="POST">
+        <input type="text" placeholder="name" name="name" />
+        <input type="text" placeholder="quote" name="quote" />
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section data-position="update-quote">
+      <div>
+        <h2>Replace</h2>
+        <p>
+          Replace first sai's quote with a quote written by Pavan
+        </p>
+        <button id="update-button">Replace sai's quote</button>
+      </div>
+    </section>
+
+    <section data-position="delete-quote">
+      <div>
+        <h2>Delete</h2>
+        <p>
+          Delete one Pavan's quote.
+        </p>
+        <button id="delete-button">Delete Pavan's quote</button>
+      </div>
+      <div id="message"></div>
+    </section>
+
+    <section data-position="quotes">
+      <h2>Quotes</h2>
+<center>
+      <ul class="quotes">
+        <% for(var i = 0; i < quotes.length; i++) {%>
+        <li class="quote">
+          <span><%= quotes[i].name %></span>:
+          <span><%= quotes[i].quote %></span>
+        </li>
+        <% } %>
+      </ul>
+    </section>
+  </center>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
